@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factorial</title>
+    <style>
+        @media only screen and (max-width: 600px){
+            #myForm{
+                width:500px;
+            height:500px;
+            }
+            
+        }
+    </style>
+</head>
+<body>
+    
+        <form id="myForm">
+            <h1 style="text-shadow:2px 2px 0px black">FACTORIAL GENERATOR</h1>
+            <label for="number1" style="font-size:20px">Enter a number</label><br><br>
+            <input type="text" id="number1" style="width:40%;height:7%;box-shadow: 3px 3px 3px black;font-size:20px"><br><br>
+            <label for="number2" style="font-size:20px">Factorial of Given Number</label><br><br>
+            <input type="text" id="number2" style="font-size:25px;border:0;background-color:transparent;font-size:20px;color:whitesmoke"><br><br>
+            <input type="submit" id="btn">
+        </form>
+        
+
+    <script>
+        let getForm=document.getElementById("myForm");
+        getForm.setAttribute("style","font-weight:700;box-shadow:7px 7px 5px black;border:3px solid orange;background-image:linear-gradient(120deg,red,gold,green);position:absolute;left:30%;top:20%;width:30%;height:50%;font-size:100%;font-family:Arial, Helvetica, sans-serif;border-radius:8%;padding-left:5%;padding-top:3%")
+        
+        function factorial(getInput){
+                let fact=1
+                for(let i=1;i<=getInput;i++){
+                    fact=fact*i
+                }
+            return fact
+            }
+        let getBtn=document.getElementById("btn");
+        getBtn.setAttribute("style","font-weight:700;box-shadow:3px 3px 3px black;color:black;border-radius:3%;background-color:transparent;font-size:120%;border:2px solid tarnsparent;font-family:Arial, Helvetica, sans-serif;")
+        // getBtn.setAttribute("style","font-size:120%")
+        getForm.addEventListener("submit",(e)=>{
+            e.preventDefault()
+            let getInput=document.getElementById("number1").value;
+            let getInput2=document.getElementById("number2");
+            getInput=parseInt(getInput)
+            getInput2.value=factorial(getInput)
+        });
+    </script>
+</body>
+</html>
